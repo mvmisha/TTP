@@ -4,3 +4,4 @@ function carruselLogIn(){
     img.src=fotos[Math.floor(Math.random()* 4)]
     
 }
+setInterval(carruselLogIn, 10000);
