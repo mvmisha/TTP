@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+<form>
+    <input type="text" id="codigo">
+    <input type="button" onclick="buscar()" >
+    
+</form>
+
+</body>
+<script type="application/javascript">
+    function buscar() {
+        var codigo = document.getElementById('codigo').value
+        var link = "http://localhost/json/?codigo="+codigo 
+        var xhttp;
+        var urlapi;
+        urlapi = link
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var objeto = JSON.parse(xhttp.responseText);
+                link = objeto
+                console.log(link)
+            }
+        };
+        xhttp.open("GET", urlapi, true);
+        xhttp.send();
+    }
+
+</script>
+
+</html>

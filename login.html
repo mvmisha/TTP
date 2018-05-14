@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION['username'])) { header('Location: log.php'); }
+?>
 <html lang="es">
 <head>
     <title>TTP - Login</title>
@@ -32,17 +35,17 @@
     <div class="container">
         <img  id="carruselLogIn" class="rounded float-right" style="width: 50%" src="img/1.jpg">
         <br><br>
-        <form class="form-horizontal" action="">
+        <form class="form-horizontal" action="iniciar.php" method="post">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Usuario:</label>
+                <label class="control-label col-sm-2" for="usuario">Usuario:</label>
                 <div class="col-sm-3">
-                    <input type="email" class="form-control" id="email">
+                    <input type="text" name="usuario" class="form-control" id="usuario" required>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
                 <div class="col-sm-3">
-                    <input type="password" class="form-control" id="pwd">
+                    <input type="password " name="pwd" class="form-control" id="pwd"  required>
                 </div>
             </div>
             <div class="form-group">
