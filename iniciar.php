@@ -4,7 +4,7 @@ session_start();
 <?php
 $usuario=$_POST['usuario'];
 $pwd=$_POST['pwd'];
-$sql = "SELECT codCliente, pwd FROM clientes where codCliente=".$usuario;
+$sql = "SELECT codCliente, pwd, nomCliente, apeCliente FROM clientes where codCliente=".$usuario;
 
 function connectDB(){
         $server = "localhost";
@@ -45,8 +45,9 @@ function getArraySQL($sql){
 $myArray = getArraySQL($sql);
 if ($usuario==$myArray[0][0]){
     if($pwd==$myArray[0][1]){
-        $_SESSION["usuario"]=$usuario;
-        header('Location: /control/index.html');    
+        $_SESSION["nombre"]=strtolower($myArray[0][2]);
+        $_SESSION["nombreCompleto"]=$myArray[0][2] . " ".$myArray[0][3] ;
+        header('Location: /control');    
     } else{
         header("location:/login.html");
     }
