@@ -47,6 +47,7 @@ if ($usuario==$myArray[0][0]){
     if($pwd==$myArray[0][1]){
         $_SESSION["nombre"]=strtolower($myArray[0][2]);
         $_SESSION["nombreCompleto"]=$myArray[0][2] . " ".$myArray[0][3] ;
+        $_SESSION["codCliente"]=$myArray[0][0];
         header('Location: /control');    
     } else{
         header("location:/login.html");
