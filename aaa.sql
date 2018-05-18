@@ -1,0 +1,12 @@
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '444', '2018-05-16', '1');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-16', '2');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '333', '2018-05-15', '2');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-16', '3');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-14', '2');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '333', '2018-05-15', '1');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-16', '1');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '333', '2018-05-15', '2');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '444', '2018-05-16', '1');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-16', '1');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '444', '2018-05-14', '2');
+INSERT INTO `viajes` (`codCliente`, `codParada`, `fechaViaje`, `codLinea`) VALUES ('998801', '111', '2018-05-16', '1');

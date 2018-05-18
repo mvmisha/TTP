@@ -22,9 +22,9 @@ session_start();
         <div class="row">
             <div class="col-lg-12">
                 <a href="abono.php" class="btn btn-sq-lg btn-success btn-block"> Renovar abono</a> <br>
-                <a href="#" class="btn btn-sq-lg btn-info btn-block"> Historial de viajes</a> <br>
-                <a href="#" class="btn btn-sq-lg btn-warning btn-block"> Informacion</a> <br>
-                <a href="#" class="btn btn-sq-lg btn-danger btn-block"> Gestion de usuario</a> <br>
+                <a href="historico.php" class="btn btn-sq-lg btn-info btn-block"> Historial de viajes</a> <br>
+                <a href="info.php" class="btn btn-sq-lg btn-warning btn-block"> Informacion</a> <br>
+                <a href="gestion.php" class="btn btn-sq-lg btn-danger btn-block"> Gestion de usuario</a> <br>
             </div>
         </div>
     </div>

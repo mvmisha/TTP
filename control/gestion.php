@@ -18,33 +18,11 @@ session_start();
         <h1 class="display-4">Hola,
             <?php echo $_SESSION["nombre"];?>
         </h1>
-        <p class="lead">Aqui puedes recargar tu abono</p>
+        <p class="lead">Edita tu informacion o date de baja si asi lo deseas</p>
     </div><br>
     <div class="container">
 
-        <form action="recargar.php" method="post">
-            <div class="form-group">
-                <label>Correo de confirmacion</label>
-                <input type="email" class="form-control" id="confirmCorreo" placeholder="nombre@hehehe.com">
-            </div>
-            <div class="form-group">
-                <label>Seleccione la zona de su abono, <a target="_blank" href="../tarifas.html">mas informacion.</a></label>
-                <select class="form-control" name="zonaAbono" id="selectZona">
-                  <option value="A1">A1</option>
-                  <option value="B1">B1</option>    
-                  <option value="B2">B2</option>
-                  <option value="B3">B3</option>
-                  <option value="C1">C1</option>
-                  <option value="C2">C2</option>
-                  <option value="E1">E1</option>
-                  <option value="E2">E2</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-default">Recargar</button>
-            </div>
-
-        </form>
+        
     </div>
     <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-bottom" style="position:fixed;bottom:0;width: 100%">
         <div class="container">
