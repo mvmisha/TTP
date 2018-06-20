@@ -2,6 +2,8 @@
 session_start();
 ?>
 
+
+
 <?php
 
 $sql = "SELECT * FROM viajes where codCliente=".$_SESSION["codCliente"];
@@ -53,6 +55,11 @@ function getArraySQL($sql){
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
     </head>
 
     <body><br>
@@ -70,7 +77,7 @@ function getArraySQL($sql){
                 } else{ 
             ?>
 
-            <table class="table table-bordered table-hover">
+            <table id="tablahistorico" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead class="thead-light">
 
                     <tr>
@@ -107,7 +114,13 @@ function getArraySQL($sql){
                 ?>
                 </tbody>
             </table>
-        </div>
+            <script>
+                $(document).ready(function() {
+                    $('#tablahistorico').DataTable();
+                });
+
+            </script>
+        </div><br><br><br><br><br><br>
         <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-bottom" style="position:fixed;bottom:0;width: 100%">
             <div class="container">
                 <a class="navbar-text pull-left" style="color: white">

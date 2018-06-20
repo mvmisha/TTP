@@ -30,12 +30,10 @@ if (isset($_SESSION['username'])) { header('Location: log.php'); }
                     <a class="nav-link" href="login.html">Login</a>
                 </li>
             </ul>
-        </nav>
-        <div class="jumbotron">
-            <h1>Registro</h1>
-        </div>
+        </nav><br><br><br><br>
         <div class="container">
-            <br><br>
+            <h1 class="display-3">Registro</h1>
+            <br>
             <form class="form-horizontal" name="formregistro" id="formregistro" action="enviarRegistro.php" method="post">
                 <div class="row form-group">
                     <div class="col-sm-3">
@@ -49,24 +47,20 @@ if (isset($_SESSION['username'])) { header('Location: log.php'); }
                     <div class="col-sm-3">
                         <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Contraseña" required>
                     </div>
+                </div>
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <input type="password" name="pwddos" class="form-control" id="pwddos" placeholder="Repita la contraseña" required>
+                        <input type="text" placeholder="Foto de perfil" onfocus="(this.type='file')"name="fotoperfil" accept="image/*" class="form-control" id="fotoperfil">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sm-3">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo Electronico" required>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <input placeholder="Fecha de nacimiento" class="form-control" type="text" onfocus="(this.type='date')" id="fechanacimiento" required>
+                        <input placeholder="Fecha de nacimiento" name="fechanacim" class="form-control" type="text" onfocus="(this.type='date')" id="fechanacim" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" onclick="comprobarRegistro()" class="btn btn-default">Registrar</button>
-
                     </div>
                 </div>
             </form>

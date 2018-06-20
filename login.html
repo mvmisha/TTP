@@ -27,14 +27,12 @@ if (isset($_SESSION['username'])) { header('Location: log.php'); }
                     <a class="nav-link" href="tarifas.html">Tarifas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                    <a style="color: white" class="nav-link" href="login.html">Login</a>
                 </li>
             </ul>
-        </nav>
-        <div class="jumbotron">
-            <h1>Login</h1>
-        </div>
+        </nav><br><br><br><br>
         <div class="container">
+           <h1 class="display-3">Login</h1>
             <img id="carruselLogIn" class="rounded float-right" style="width: 50%" src="img/1.jpg">
             <br><br>
             <form class="form-horizontal" action="iniciar.php" method="post">

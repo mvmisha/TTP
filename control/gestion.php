@@ -1,6 +1,46 @@
 <?php 
 session_start();
 ?>
+
+<?php
+
+$sql = "SELECT * FROM clientes where codCliente=".$_SESSION["codCliente"];
+function connectDB(){
+        $server = "localhost";
+        $user = "root";
+        $pass = "";
+        $bd = "ttp";
+    $conexion = mysqli_connect($server, $user, $pass,$bd);
+        if($conexion){
+        }else{
+            echo 'Ha sucedido un error inexperado en la conexion de la base de datos';
+        }
+    return $conexion;
+}
+function disconnectDB($conexion){
+    $close = mysqli_close($conexion);
+        if($close){
+        }else{
+            echo 'Ha sucedido un error inexperado en la desconexion de la base de datos';
+        }   
+    return $close;
+}
+function getArraySQL($sql){
+    $conexion = connectDB();
+    mysqli_set_charset($conexion, "utf8");
+    if(!$result = mysqli_query($conexion, $sql)) die(); 
+    $rawdata = array(); 
+    $i=0;
+    while($row = mysqli_fetch_array($result))
+    {
+        $rawdata[$i] = $row;
+        $i++;
+    }
+    disconnectDB($conexion);
+    return $rawdata; 
+}
+        $myArray = getArraySQL($sql);
+?>
 <html lang="es">
 
 <head>
@@ -25,40 +65,26 @@ session_start();
      
     <div class="container">
             <br><br>
-            <form class="form-horizontal" name="formregistro" id="formregistro" action="enviarRegistro.php" method="post">
+            <form class="form-horizontal" name="formregistro" id="formregistro" action="actualizarinfo.php" method="post">
                 <div class="row form-group">
                     <div class="col-sm-3">
-                        <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" required>
+                        <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $myArray[0][2];?>" placeholder="Nombre" required>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" required>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Contraseña" required>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="password" name="pwddos" class="form-control" id="pwddos" placeholder="Repita la contraseña" required>
+                        <input type="text" name="apellido" class="form-control" id="apellido" value="<?php echo $myArray[0][3];?>" placeholder="Apellido" required>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sm-3">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo Electronico" required>
+                        <input placeholder="Fecha de nacimiento" value="<?php echo $myArray[0][6];?>"class="form-control" type="text" onfocus="(this.type='date')" id="fechanacimiento" name="fechanacimiento" required>
                     </div>
-                </div>
-                <div class="row form-group">
                     <div class="col-sm-3">
-                        <input placeholder="Fecha de nacimiento" class="form-control" type="text" onfocus="(this.type='date')" id="fechanacimiento" required>
+                        <button type="submit" class="btn btn-default">Cambiar</button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" onclick="comprobarRegistro()" class="btn btn-default">Cambiar</button>
-                        <button type="submit" onclick="comprobarRegistro()" class="btn btn-danger">Eliminar cuenta</button>
-
-                    </div>
-                </div>
+            </form>
+            <form class="form-horizontal" name="eliminar" id="eliminar" action="eliminarCuenta.php" method="post">
+                <button type="submit" onclick="" class="btn btn-danger">Eliminar cuenta</button>
             </form>
         </div>    
               
